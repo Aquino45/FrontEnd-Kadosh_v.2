@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { ToastContainerComponent } from './shared/toast/toast-container';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,              // 👈 necesario en standalone
+  imports: [RouterOutlet, ToastContainerComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']       // 👈 plural
 })
 export class App {
   protected title = 'Kadosh-FrontEnd';

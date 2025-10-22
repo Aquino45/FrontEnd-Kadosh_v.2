@@ -43,6 +43,7 @@
 /* Contenedor interno: grid con 3 secciones */
 .sidebar-inner {
   position: relative;
+  
   height: 100%;
   padding: 28px 14px 16px;
   display: flex;
@@ -126,11 +127,19 @@
 
 .nav {
   flex: 1;
-  /* ocupa todo el espacio disponible */
-  overflow-y: auto;
-  /* permite scroll */
+  overflow-y: auto;            /* mantiene el scroll funcional */
+  -ms-overflow-style: none;    /* IE/Edge */
+  scrollbar-width: none;       /* Firefox */
   margin-bottom: 30px;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
 }
+
+/* oculta barra de scroll en navegadores WebKit (Chrome, Safari, Edge) */
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
 
 .nav-item {
   display: grid;
